@@ -1,4 +1,4 @@
-class ParseFile
+class ParseInput
   def initialize(string_to_parse)
     @string_to_parse = string_to_parse
   end
@@ -64,13 +64,13 @@ end
 class SwapElements
   def initialize(string_inputs = ARGV[0])
     IO.foreach(string_inputs) do |line|
-      parsed_string = ParseFile.new(line)
+      parsed_string = ParseInput.new(line)
       numbers_array = parsed_string.numbers_array
       actions_array = parsed_string.actions_array
       swapped_array = SwapArrayValues.new(numbers_array, actions_array).update
       puts swapped_array
     end
   end
-endgit 
+endgit
 
 SwapElements.new

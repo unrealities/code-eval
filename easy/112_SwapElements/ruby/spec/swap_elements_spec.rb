@@ -1,18 +1,18 @@
 require_relative '../swap_elements'
 
 describe "swap_elements" do
-  describe "ParseFile" do
-    let(:parse_file){ParseFile.new('1 2 3 : 0-1, 1-2')}
+  describe "ParseInput" do
+    let(:parse_input){ParseInput.new('1 2 3 : 0-1, 1-2')}
 
     describe "#numbers_array" do
       it "returns ['1','2','3']" do
-        expect(parse_file.numbers_array).to eq ["1", "2", "3"]
+        expect(parse_input.numbers_array).to eq ["1", "2", "3"]
       end
     end
 
     describe "#actions_array" do
       it "returns [['0','1'],['1','2']]" do
-        expect(parse_file.actions_array).to eq [["0","1"],["1","2"]]
+        expect(parse_input.actions_array).to eq [["0","1"],["1","2"]]
       end
     end
   end
