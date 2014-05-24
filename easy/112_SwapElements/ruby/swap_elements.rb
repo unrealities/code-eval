@@ -71,6 +71,6 @@ class SwapElements
       puts swapped_array
     end
   end
-endgit
+end
 
 SwapElements.new
