@@ -3,21 +3,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.lang.Character;
 
-public class Main implements Runnable {
+public class Main {
 
     private String fileName;
 
     public Main (String fileName) {
         this.fileName = fileName;
-    }
-
-    @Override
-    public void run() {
-        try {
-            processFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     private void processFile() throws IOException {
@@ -67,7 +58,12 @@ public class Main implements Runnable {
     }
 
     public static void main(String[] args) {
-        new Main(args[0]).run();
+        Main main = new Main(args[0]);
+        try {
+            main.processFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
