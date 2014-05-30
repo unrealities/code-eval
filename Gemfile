@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.1.1'
+
 gem 'rspec'
-gem 'debugger2'
-gem 'debase'
-gem 'ruby-debug-ide'
+gem 'spring'

@@ -2,7 +2,6 @@ require_relative '../swap_elements'
 
 describe "swap_elements" do
   describe "ParseInput" do
-    let(:parse_input){ParseInput.new('1 2 3 : 0-1, 1-2')}
 
     describe "#numbers_array" do
       it "returns ['1','2','3']" do
