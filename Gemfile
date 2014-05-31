@@ -6,3 +6,5 @@ gem 'rspec'
 gem 'spring'
 gem 'guard-rspec', require: false
 gem 'ruby_gntp'
+gem 'debase'
+gem 'ruby-debug-ide'
