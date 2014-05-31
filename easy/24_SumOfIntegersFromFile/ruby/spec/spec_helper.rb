@@ -1,0 +1,1 @@
+require_relative '../lib/sum_of_integers_frome_file'
