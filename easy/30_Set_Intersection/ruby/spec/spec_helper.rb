@@ -1,0 +1,1 @@
+require_relative '../lib/set_intersection'
