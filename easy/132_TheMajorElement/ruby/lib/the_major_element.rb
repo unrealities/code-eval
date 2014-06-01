@@ -16,6 +16,7 @@ class ComputeArray
     @half_array_length = array_length/2
   end
 
+  #TODO Improve performance of this method. Results in 5 second run time and 21/35 score
   def major_element
     major_element = 'None'
     @array_to_calc.uniq.each do |val|
