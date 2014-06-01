@@ -1,0 +1,1 @@
+require_relative '../lib/multiples_of_a_number'
