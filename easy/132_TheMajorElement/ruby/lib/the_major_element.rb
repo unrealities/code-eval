@@ -16,22 +16,17 @@ class ComputeArray
     @half_array_length = array_length/2
   end
 
-  #TODO Improve performance of this method. Results in 5 second run time and 21/35 score
   def major_element
+    count = Hash.new(0)
     major_element = 'None'
-    @array_to_calc.uniq.each do |val|
-      if over_half?(val)
+    @array_to_calc.each do |val|
+      count[val]+=1
+      if count[val] > @half_array_length
         major_element = val.to_s
         break
       end
     end
     major_element
-  end
-
-  private
-
-  def over_half?(val)
-    @array_to_calc.count(val) > @half_array_length
   end
 end
 
@@ -45,4 +40,4 @@ class TheMajorElement
   end
 end
 
-TheMajorElement.new
+#TheMajorElement.new
