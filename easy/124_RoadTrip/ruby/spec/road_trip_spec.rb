@@ -2,6 +2,22 @@ require_relative 'spec_helper'
 
 RSpec.describe ParseInput do
   let(:parse_input) { ParseInput.new('Rkbs,5453; Wdqiz,1245; Rwds,3890; Ujma,5589; Tbzmo,1303;')}
+
+  describe "#to_i_a" do
+    it "should return an array of integers" do
+      expect(parse_input.to_i_a).to eq [5453, 1245, 3890, 5589, 1303]
+    end
+  end
+end
+
+RSpec.describe CalcPathDistance do
+  let(:calc_path_distance) { CalcPathDistance.new([5453, 1245, 3890, 5589, 1303])}
+
+  describe "#calc_path_distance" do
+    it "should return a sorted array of path distances" do
+      expect(calc_path_distance.calc_path_distance).to eq '1245,58,2587,1563,136'
+    end
+  end
 end
 
 RSpec.describe RoadTrip do
