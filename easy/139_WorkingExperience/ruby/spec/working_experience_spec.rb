@@ -1,18 +1,18 @@
 require_relative 'spec_helper'
 
 RSpec.describe ParseInput do
-  let(:parse_input) { ParseInput.new('Feb 2004-Dec 2009; Sep 2004-Jul 2008')}
+  let(:parse_input) { ParseInput.new('Feb 2004-Dec 2009; Sep 2004-Jul 2008') }
   describe '#simple_date_array' do
     it 'should split array into an array of simple dates' do
-      expect(parse_input.simple_date_array).to eq [['Feb 2004','Dec 2009'], ['Sep 2004','Jul 2008']]
+      expect(parse_input.simple_date_array).to eq [['Feb 2004', 'Dec 2009'], ['Sep 2004', 'Jul 2008']]
     end
   end
 
   describe '#array_of_dates' do
-    let(:feb_04) {Date.new(2004,2)}
-    let(:dec_09) {Date.new(2009,12,-1)}
-    let(:sep_04) {Date.new(2004,9)}
-    let(:jul_08) {Date.new(2008,7,-1)}
+    let(:feb_04) { Date.new(2004, 2) }
+    let(:dec_09) { Date.new(2009, 12, -1) }
+    let(:sep_04) { Date.new(2004, 9) }
+    let(:jul_08) { Date.new(2008, 7, -1) }
 
     it 'should return an array of date objects' do
       expected_array = [[feb_04, dec_09], [sep_04, jul_08]]
@@ -22,11 +22,11 @@ RSpec.describe ParseInput do
 end
 
 RSpec.describe CalculateWorkingTime do
-  let(:feb_04) {Date.new(2004,2)}
-  let(:dec_09) {Date.new(2009,12,-1)}
-  let(:sep_04) {Date.new(2004,9)}
-  let(:jul_08) {Date.new(2008,7,-1)}
-  let(:calc_work_time) { CalculateWorkingTime.new([[feb_04, dec_09], [sep_04, jul_08]])}
+  let(:feb_04) { Date.new(2004, 2) }
+  let(:dec_09) { Date.new(2009, 12, -1) }
+  let(:sep_04) { Date.new(2004, 9) }
+  let(:jul_08) { Date.new(2008, 7, -1) }
+  let(:calc_work_time) { CalculateWorkingTime.new([[feb_04, dec_09], [sep_04, jul_08]]) }
 
   describe '#working_years' do
     it 'should return working years given an array of date ranges' do
@@ -44,8 +44,8 @@ RSpec.describe WorkingExperience do
     $stdout = STDOUT
   end
 
-  describe "#initialize" do
-    it "should return correct test outputs given test input" do
+  describe '#initialize' do
+    it 'should return correct test outputs given test input' do
       WorkingExperience.new('../test_input.txt')
       expect($stdout.string).to match('14')
       expect($stdout.string).to match('19')

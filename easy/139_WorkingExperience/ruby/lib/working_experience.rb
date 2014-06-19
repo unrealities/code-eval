@@ -36,8 +36,8 @@ class CalculateWorkingTime
   end
 
   def working_years
-    while @array_of_date_ranges.length > @current_date_range do
-      while @next_date_range < @array_of_date_ranges.length do
+    while @array_of_date_ranges.length > @current_date_range
+      while @next_date_range < @array_of_date_ranges.length
         if overlap?([@array_of_date_ranges[@current_date_range],
                      @array_of_date_ranges[@next_date_range]])
           condense_date_ranges(@current_date_range, @next_date_range)
@@ -65,10 +65,13 @@ class CalculateWorkingTime
   end
 
   def overlap?(array_of_date_ranges)
-    (array_of_date_ranges[1].min <= array_of_date_ranges[0].max &&
-    array_of_date_ranges[1].min >= array_of_date_ranges[0].min) ||
-    (array_of_date_ranges[0].min <= array_of_date_ranges[1].max &&
-    array_of_date_ranges[0].min >= array_of_date_ranges[1].min)
+    min_max_compare(array_of_date_ranges, 1, 0) ||
+    min_max_compare(array_of_date_ranges, 0, 1)
+  end
+
+  def min_max_compare(array_of_date_ranges, first_index, second_index)
+    array_of_date_ranges[first_index].min <= array_of_date_ranges[second_index].max &&
+    array_of_date_ranges[first_index].min >= array_of_date_ranges[second_index].min
   end
 
   def condense_date_ranges(first_index_to_condense, second_index_to_condense)
@@ -84,11 +87,11 @@ class CalculateWorkingTime
     new_array = []
 
     @array_of_date_ranges.each do |date_range|
-      new_array << (date_range[1]-date_range[0]).to_i
+      new_array << (date_range[1] - date_range[0]).to_i
     end
 
     # needed to add '.round(1).truncate' to get all the cases to work.
-    (new_array.reduce(:+)/365.to_f).round(1).truncate
+    (new_array.reduce(:+) / 365.to_f).round(1).truncate
   end
 end
 
@@ -103,4 +106,4 @@ class WorkingExperience
   end
 end
 
-#WorkingExperience.new
+# WorkingExperience.new
