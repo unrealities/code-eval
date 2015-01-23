@@ -1,9 +1,5 @@
 require_relative 'spec_helper'
 
-RSpec.describe ParseInput do
-  let(:parse_input) { ParseInput.new('thisTHIS') }
-end
-
 RSpec.describe JugglingWithZeros do
   before do
     $stdout = StringIO.new
