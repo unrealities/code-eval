@@ -18,25 +18,22 @@ The result should be funny.
 The first argument is a file that contains a text.
 
 For example:
+> Lorem ipsum dolor sit amet. Mea et habeo doming praesent. Te inani utroque recteque has, sea ne fugit verterem!
 
-Lorem ipsum dolor sit amet. Mea et habeo doming praesent. Te inani
-utroque recteque has, sea ne fugit verterem!
-Usu ei scripta phaedrum, an sed salutatus definiebas? Qui ut
-recteque gloriatur reformidans. Qui solum aeque sapientem cu.
-Eu nam nusquam quaestio principes.
+> Usu ei scripta phaedrum, an sed salutatus definiebas? Qui ut recteque gloriatur reformidans. Qui solum aeque sapientem cu.
+
+> Eu nam nusquam quaestio principes.
 
 ## OUTPUT SAMPLE:
 
 Print to stdout the results: the text with slang phrases.
 
 For example:
+> Lorem ipsum dolor sit amet. Mea et habeo doming praesent, yeah! Te inani utroque recteque has, sea ne fugit verterem!
 
-Lorem ipsum dolor sit amet. Mea et habeo doming praesent, yeah! Te
-inani utroque recteque has, sea ne fugit verterem!
-Usu ei scripta phaedrum, an sed salutatus definiebas, this is
-crazy, I tell ya. Qui ut recteque gloriatur reformidans. Qui solum
-aeque sapientem cu, can U believe this?
-Eu nam nusquam quaestio principes.
+> Usu ei scripta phaedrum, an sed salutatus definiebas, this is crazy, I tell ya. Qui ut recteque gloriatur reformidans. Qui solum aeque sapientem cu, can U believe this?
+
+> Eu nam nusquam quaestio principes.
 
 ## CONSTRAINTS:
 
