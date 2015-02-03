@@ -11,7 +11,7 @@ RSpec.describe MultiplicationTables do
 
   describe '#initialize' do
     it 'should return correct test outputs given test input' do
-      MultiplicationTables.new(12).to_s
+      MultiplicationTables.new(12, 4).to_s
       expect($stdout.string).to match('1   2   3   4   5   6   7   8   9  10  11  12')
       expect($stdout.string).to match('2   4   6   8  10  12  14  16  18  20  22  24')
       expect($stdout.string).to match('3   6   9  12  15  18  21  24  27  30  33  36')
