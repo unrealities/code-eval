@@ -9,17 +9,12 @@ class SquareMatrix
   
   def matrix(array_representation)
     matrix = Array.new(@dim) { Array.new(@dim)}
-    col_index = -1
-    row_index = -1
     array_index = -1
-    @dim.times do
-      col_index += 1
-      @dim.times do
-        row_index += 1
+    for col_index in 0..( @dim - 1 ) do
+      for row_index in 0..( @dim - 1 ) do
         array_index += 1
         matrix[col_index][row_index] = array_representation[array_index]
       end
-      row_index = -1
     end
     matrix
   end
@@ -39,15 +34,10 @@ class SquareMatrix
   
   def to_s
     output = ''
-    col_index = -1
-    row_index = -1
-    @dim.times do
-      col_index += 1
-      @dim.times do
-        row_index += 1
+    for col_index in 0..( @dim - 1 ) do
+      for row_index in 0..( @dim - 1 ) do
         output += @matrix[col_index][row_index] + ' '
       end
-      row_index = -1
     end
     output.rstrip
   end
