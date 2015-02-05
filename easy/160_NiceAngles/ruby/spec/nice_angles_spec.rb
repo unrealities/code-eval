@@ -1,10 +1,5 @@
 require_relative 'spec_helper'
 
-RSpec.describe ParseInput do
-  let(:parse_input) { ParseInput.new('a b c d') }
-
-end
-
 RSpec.describe NiceAngles do
   before do
     $stdout = StringIO.new
