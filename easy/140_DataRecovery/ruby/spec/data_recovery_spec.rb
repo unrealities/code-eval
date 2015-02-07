@@ -1,8 +1,26 @@
 require_relative 'spec_helper'
 
 RSpec.describe ParseInput do
-  let(:parse_input) { ParseInput.new('a b c d') }
+  let(:parse_input) { ParseInput.new('programming first The language;3 2 1') }
 
+  describe '#initialize' do
+    it 'should populate a words array' do
+      expect(parse_input.words).to eq(['programming', 'first', 'The', 'language'])
+    end
+
+    it 'should populate a positions array' do
+      expect(parse_input.positions).to eq([3, 2, 1, 4])
+    end
+  end
+end
+
+RSpec.describe CalcDataRecovery do
+  describe '#order' do
+    it 'should order an array given an ordering array' do
+      expect(CalcDataRecovery.new(['programming', 'first', 'The', 'language'], [3, 2, 1, 4]).order).to eq ['The', 'first', 'programming', 'language']
+    end
+  end
+  
 end
 
 RSpec.describe DataRecovery do
