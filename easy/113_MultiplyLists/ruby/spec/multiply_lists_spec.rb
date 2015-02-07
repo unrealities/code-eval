@@ -1,8 +1,14 @@
 require_relative 'spec_helper'
 
 RSpec.describe ParseInput do
-  let(:parse_input) { ParseInput.new('a b c d') }
+  let(:parse_input) { ParseInput.new('9 0 6 | 15 14 9') }
 
+  describe '#initialize' do
+    it 'should return two array of numbers' do
+      expect(parse_input.array1).to eq([9, 0, 6])
+      expect(parse_input.array2).to eq([15, 14, 9])
+    end
+  end
 end
 
 RSpec.describe MultiplyLists do
