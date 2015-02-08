@@ -1,8 +1,15 @@
 require_relative 'spec_helper'
 
 RSpec.describe ParseInput do
-  let(:parse_input) { ParseInput.new('a b c d') }
+  let(:parse_input) { ParseInput.new('3 5 10') }
 
+  describe '#initialize' do
+    it 'should generate X, Y and N values' do
+      expect(parse_input.x).to eq(3)
+      expect(parse_input.y).to eq(5)
+      expect(parse_input.n).to eq(10)
+    end
+  end
 end
 
 RSpec.describe FizzBuzz do
