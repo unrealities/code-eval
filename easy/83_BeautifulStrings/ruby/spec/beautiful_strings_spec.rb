@@ -1,8 +1,13 @@
 require_relative 'spec_helper'
 
 RSpec.describe ParseInput do
-  let(:parse_input) { ParseInput.new('a b c d') }
+  let(:parse_input) { ParseInput.new('ABbCcc') }
 
+  describe '#char_hash' do
+    it 'returns a hash of chars with their count' do
+      expect(parse_input.char_hash).to eq({'a' => 1, 'b' => 2, 'c' => 3})
+    end
+  end
 end
 
 RSpec.describe BeautifulStrings do
