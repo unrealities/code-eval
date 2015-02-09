@@ -1,10 +1,5 @@
 require_relative 'spec_helper'
 
-RSpec.describe ParseInput do
-  let(:parse_input) { ParseInput.new('a b c d') }
-
-end
-
 RSpec.describe BigDigits do
   before do
     $stdout = StringIO.new
@@ -52,12 +47,7 @@ RSpec.describe BigDigits do
   describe '#initialize' do
     it 'should return correct test outputs given test input' do
       BigDigits.new('../test_input.txt')
-      expect($stdout.string).to match('***----*---*-----*--****--**--***---**--')
-      expect($stdout.string).to match('---*--**--*--*--**--*----*--*----*-*----')
-      expect($stdout.string).to match('-**----*--****---*--***---***--**--***--')
-      expect($stdout.string).to match('---*---*-----*---*-----*----*-*----*--*-')
-      expect($stdout.string).to match('***---***----*--***-***---**--****--**--')
-      expect($stdout.string).to match('----------------------------------------')
+      expect($stdout.string).to eq("***----*---*-----*--****--**--***---**--\n---*--**--*--*--**--*----*--*----*-*----\n-**----*--****---*--***---***--**--***--\n---*---*-----*---*-----*----*-*----*--*-\n***---***----*--***-***---**--****--**--\n----------------------------------------\n")
     end
   end
 end
