@@ -1,10 +1,5 @@
 require_relative 'spec_helper'
 
-RSpec.describe ParseInput do
-  let(:parse_input) { ParseInput.new('11') }
-
-end
-
 RSpec.describe MinimumCoins do
   before do
     $stdout = StringIO.new
