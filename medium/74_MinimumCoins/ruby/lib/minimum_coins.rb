@@ -10,6 +10,7 @@ class CalcMinimumCoins
   def min_coins
     remaining_total = @coin_total
     COINS.each do |coin|
+      break if remaining_total == 0
       if remaining_total/coin > 0
         @min_coins += remaining_total/coin
         remaining_total %= coin
