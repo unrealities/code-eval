@@ -9,8 +9,14 @@ class Details
   def spaces_to_move(details_board)
     spaces = details_board[0].length
     details_board.each do |row|
-      empty_spaces = row.scan('.').count
-      spaces = empty_spaces if empty_spaces < spaces
+      # break fast and account for odd test case
+      if row.scan('XY').count == 1
+        spaces = 0
+        break
+      else
+        empty_spaces = row.scan('.').count
+        spaces = empty_spaces if empty_spaces < spaces
+      end
     end
     spaces
   end
