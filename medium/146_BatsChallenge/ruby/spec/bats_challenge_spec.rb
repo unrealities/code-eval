@@ -10,8 +10,11 @@ RSpec.describe ParseInput do
     it 'returns the distance between bats' do
       expect(parse_input.distance_between_bats).to eq(2)
     end
+    it 'returns the initial number of bats' do
+      expect(parse_input.num_of_bats).to eq(2)
+    end
     it 'returns the initial bat positions' do
-      expect(parse_input.init_bats).to eq [2, 9, 11]
+      expect(parse_input.init_bats).to eq [9, 11]
     end
   end
 end
@@ -26,13 +29,14 @@ RSpec.describe BatsChallenge do
   end
 
   describe '#initialize' do
-    xit 'should return correct test outputs given test input' do
+    it 'should return correct test outputs given test input' do
       BatsChallenge.new('../test_input.txt')
       expect($stdout.string).to match('3')
       expect($stdout.string).to match('5')
       expect($stdout.string).to match('0')
       expect($stdout.string).to match('5')
       expect($stdout.string).to match('8')
+      expect($stdout.string).to match('6')
     end
   end
 end
