@@ -15,7 +15,7 @@ function parse(input) {
 function decode(str, num) {
     var msg = "";
     for (var i = 0; i < num.length; i++) {
-        msg += str[parseInt(num[i])-1];
+        msg += str[num[i]-1];
     }
     return msg;
 }
