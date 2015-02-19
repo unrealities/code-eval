@@ -15,22 +15,32 @@ func main() {
 	defer file.Close()
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-		line := scanner.Text()
-		str, num := parse(line)
-		fmt.Println(decode(str, num))
+		fmt.Println(findAWriter(scanner.Text()))
 	}
 }
 
-func parse(input string) ([]string, []string) {
-	var split = strings.Split(input, "| ")
-	return strings.Split(split[0], ""), strings.Split(split[1], " ")
+type messageAndCipher struct {
+	encodedMessage []string
+	cipher []string
 }
 
-func decode(str []string, num []string) string {
-	var msg = ""
-	for key, _ := range num {
-		int_num, _ := strconv.Atoi(num[key])
-		msg += str[int_num-1]
+func findAWriter(input string) string {
+	return decode(parse(input))
+}
+
+func parse(input string) (messageAndCipher) {
+	splitInput := strings.Split(input, "| ")
+	return messageAndCipher {
+		strings.Split(splitInput[0], ""),
+		strings.Split(splitInput[1], " "),
 	}
-	return msg
+}
+
+func decode(mc messageAndCipher) string {
+	decodedMsg := ""
+	for key, _ := range mc.cipher {
+		intCipher, _ := strconv.Atoi(mc.cipher[key])
+		decodedMsg += mc.encodedMessage[intCipher-1]
+	}
+	return decodedMsg
 }
