@@ -7,21 +7,21 @@ public class FindAWriter {
     private String message;
 
     public FindAWriter(String input) {
-        ParseInput(input);
-        DecodeMessage();
+        parseInput(input);
+        decodeMessage();
     }
     
     public void outputResult() {
         System.out.println(message);
     }
 
-    private void ParseInput(String input) {
+    private void parseInput(String input) {
         String[] messageAndCipher = input.split("\\| ");
         encodedMessage = messageAndCipher[0].split("");
         cipher = messageAndCipher[1].split(" ");
     }
 
-    private void DecodeMessage() {
+    private void decodeMessage() {
         String[] decodedMessage = new String[cipher.length];
         for(int i=0; i < cipher.length; i++)
         {
