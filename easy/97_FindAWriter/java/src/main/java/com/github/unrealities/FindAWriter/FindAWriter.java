@@ -1,4 +1,9 @@
-import java.io.*;
+package com.github.unrealities;
+
+import java.io.IOException;
+import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.Arrays;
 
 public class FindAWriter {

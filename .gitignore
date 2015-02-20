@@ -23,3 +23,8 @@ config/initializers/secret_token.rb
 *.iml
 out/`
 atlassian-ide-plugin.xml
+
+#Java
+**/target
+*.class
+*.jar
