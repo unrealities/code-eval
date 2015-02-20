@@ -1,4 +1,4 @@
-`# Rails via Github
+# Rails via Github
 *.rbc
 capybara-*.html
 .rspec
@@ -28,3 +28,6 @@ atlassian-ide-plugin.xml
 **/target
 *.class
 *.jar
+
+#JS
+jasmine-standalone-2.2.0
