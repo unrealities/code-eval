@@ -13,7 +13,7 @@ function run_test {
   while read line || [[ -n "$line" ]]; do
     $1 "$line"
     check_for_failures
-  done < $2
+  done < ../test_input.txt
 }
 
 function check_for_failures {
@@ -46,7 +46,7 @@ function test_results {
 
 function run_tests_for {
   starting_test
-  run_test $1 $2
+  run_test $1
   finishing_test
   test_results
 }
