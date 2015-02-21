@@ -1,24 +1,24 @@
 <?php
-findWriters($argv[1]);
-
-function findWriters($file) {
-    $fileToParse = fopen($file, 'r');
-    while (!feof($fileToParse)) {
-        new findAWriter(fgets($fileToParse));
-    }
-}
+//findWriters($argv[1]);
+//
+//function findWriters($file) {
+//    $fileToParse = fopen($file, 'r');
+//    while (!feof($fileToParse)) {
+//        $writer = new findAWriter(fgets($fileToParse));
+//        $writer->printDecodedMessage();
+//    }
+//}
 
 class findAWriter {
     private $inputString = '';
     private $encodedMessage = array();
     private $cipher = array();
-    private $decodedMessage = '';
+    public $decodedMessage = '';
 
     function __construct($input) {
         $this->inputString = $input;
         $this->parseInput();
         $this->decode();
-        $this->printDecodedMessage();
     }
 
     function parseInput() {

@@ -30,4 +30,9 @@ atlassian-ide-plugin.xml
 *.jar
 
 #JS
-jasmine-standalone-2.2.0
+jasmine-*
+
+#PHP
+vendor
+*.phar
+composer.lock
