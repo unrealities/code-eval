@@ -1,5 +1,6 @@
 code-eval
 =========
+[![Code Climate](https://codeclimate.com/github/unrealities/code-eval/badges/gpa.svg)](https://codeclimate.com/github/unrealities/code-eval)
 
 My code-eval profile: http://www.codeeval.com/profile/tomszymanski/
 
