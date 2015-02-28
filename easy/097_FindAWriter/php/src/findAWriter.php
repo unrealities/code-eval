@@ -1,13 +1,15 @@
 <?php
-//findWriters($argv[1]);
-//
-//function findWriters($file) {
-//    $fileToParse = fopen($file, 'r');
-//    while (!feof($fileToParse)) {
-//        $writer = new findAWriter(fgets($fileToParse));
-//        $writer->printDecodedMessage();
-//    }
-//}
+//new findWriters($argv[1]);
+
+class findWriters {
+    function __construct($file) {
+        $fileToParse = fopen($file, 'r');
+        while (!feof($fileToParse)) {
+            $writer = new findAWriter(fgets($fileToParse));
+            $writer->printDecodedMessage();
+        }
+    }
+}
 
 class findAWriter {
     private $inputString = '';
