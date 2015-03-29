@@ -1,6 +1,6 @@
 require_relative 'spec_helper'
 
-RSpec.describe MinimumDistance do
+RSpec.describe MinimumDistances do
   before do
     $stdout = StringIO.new
   end
@@ -11,7 +11,7 @@ RSpec.describe MinimumDistance do
 
   describe '#initialize' do
     it 'should return correct test outputs given test input' do
-      FizzBuzz.new('../test_input.txt')
+      MinimumDistances.new('../test_input.txt')
       expect($stdout.string).to match('6')
       expect($stdout.string).to match('20')
     end
