@@ -1,14 +1,17 @@
 package main
 
-import "testing"
+import (
+	"strconv"
+	"testing"
+)
 import "log"
 import "bufio"
 import "os"
 
 func TestPrimePalindrome(t *testing.T) {
 	result := primePalindrome(1000)
-	if "929" != result {
-		t.Error("Expected: " + value + " | Got: " + result)
+	if 929 != result {
+		t.Error("Expected: 929" + " | Got: " + strconv.Itoa(result))
 	}
 }
 
