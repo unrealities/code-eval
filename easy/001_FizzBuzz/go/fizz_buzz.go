@@ -1,15 +1,14 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"log"
 	"math"
+	"os"
+	"strconv"
+	"strings"
 )
-import "log"
-import "bufio"
-
-import "os"
-import "strconv"
-import "strings"
 
 func main() {
 	file, err := os.Open(os.Args[1])
