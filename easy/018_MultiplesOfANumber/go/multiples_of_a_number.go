@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
+	"strings"
 )
 
 func main() {
@@ -24,6 +26,24 @@ type xn struct {
 	n int
 }
 
+func Parse(input string) xn {
+	splitInput := strings.Split(input, ",")
+	x, _ := strconv.Atoi(splitInput[0])
+	n, _ := strconv.Atoi(splitInput[1])
+
+	return xn{x, n}
+}
+
+func MultipleOfANumber(xn xn) int {
+	s := xn.n
+	for i := 1; xn.x > s; i++ {
+		s = xn.n * i
+	}
+	return s
+}
+
 func MultiplesOfANumber(input string) string {
-	return "result"
+	xn := Parse(input)
+	result := MultipleOfANumber(xn)
+	return strconv.Itoa(result)
 }
