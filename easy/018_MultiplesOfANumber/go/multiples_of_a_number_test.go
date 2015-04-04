@@ -1,21 +1,21 @@
 package main
 
-import "testing"
-import "log"
-import "bufio"
-import "os"
+import (
+	"bufio"
+	"log"
+	"os"
+	"strconv"
+	"testing"
+)
 
 func TestMultiplesOfANumber(t *testing.T) {
-	expect := [2]string{
-		"16",
-		"32",
-	}
+	expect := [2]int{16, 32}
 	inputs := Inputs("../test_input.txt")
 
 	for key, value := range expect {
 		result := MultiplesOfANumber(inputs[key])
 		if value != result {
-			t.Error("Expected: " + value + " | Got: " + result)
+			t.Error("Expected: " + strconv.Itoa(value) + " | Got: " + strconv.Itoa(result))
 		}
 	}
 }

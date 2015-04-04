@@ -42,8 +42,8 @@ func MultipleOfANumber(xn xn) int {
 	return s
 }
 
-func MultiplesOfANumber(input string) string {
+func MultiplesOfANumber(input string) int {
 	xn := Parse(input)
 	result := MultipleOfANumber(xn)
-	return strconv.Itoa(result)
+	return result
 }
